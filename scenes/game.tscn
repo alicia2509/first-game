@@ -1,9 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://dwbujx2k7w1f7"]
+[gd_scene load_steps=27 format=3 uid="uid://dwbujx2k7w1f7"]
 
 [ext_resource type="Script" path="res://script/game_manager.gd" id="1_12ihn"]
 [ext_resource type="PackedScene" uid="uid://c1jkn8eojjxkq" path="res://scenes/player.tscn" id="1_qhjwk"]
 [ext_resource type="Texture2D" uid="uid://btsu7k5grr2f6" path="res://assets/sprites/world_tileset.png" id="2_odvxu"]
 [ext_resource type="Texture2D" uid="uid://d3o7j8xraamq2" path="res://assets/world_tileset.png" id="2_v57pw"]
+[ext_resource type="PackedScene" uid="uid://coyxk4khtejix" path="res://scenes/bala.tscn" id="3_el3jq"]
 [ext_resource type="PackedScene" uid="uid://mdj7afly1flg" path="res://scenes/plataforma.tscn" id="3_moaon"]
 [ext_resource type="PackedScene" uid="uid://igu42ie1n348" path="res://scenes/moneda.tscn" id="4_ndfef"]
 [ext_resource type="PackedScene" uid="uid://dmocvrrqrpku0" path="res://scenes/killzone.tscn" id="5_3qcbo"]
@@ -437,6 +438,9 @@ theme_override_font_sizes/font_size = 8
 text = "has conseguido
  x pipas de 40 ★"
 horizontal_alignment = 1
+
+[node name="bala" parent="Game manager" instance=ExtResource("3_el3jq")]
+position = Vector2(171, -54)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_bcwkl")

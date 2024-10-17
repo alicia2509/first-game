@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://coyxk4khtejix"]
+
+[ext_resource type="Script" path="res://scenes/bala.gd" id="1_ernc1"]
+[ext_resource type="Texture2D" uid="uid://c58gmvgieohyi" path="res://assets/sprites/coin.png" id="1_sgltm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6myal"]
+radius = 14.1421
+
+[node name="bala" type="RigidBody2D"]
+script = ExtResource("1_ernc1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sgltm")
+region_enabled = true
+region_rect = Rect2(0, 0, 69, 65)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 4)
+shape = SubResource("CircleShape2D_6myal")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

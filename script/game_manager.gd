@@ -6,4 +6,4 @@ var score = 0
 
 func add_point():
 	score += 1
-	score_label.text = "Has conseguido " + str(score) + "pipas"
+	score_label.text = "has conseguido " + str(score) + " de 40 pipas ★" 

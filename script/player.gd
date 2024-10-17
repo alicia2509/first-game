@@ -50,11 +50,7 @@ func _physics_process(delta):
 # Nueva función para la muerte del jugador
 func die():
 	is_dead = true
-	animated_sprite.play("death")  # Reproducimos la animación de muerte
-	
-	# Establecer el tiempo de espera del temporizador directamente
-	death_timer.wait_time = 10.0  # Cambia esto si la duración de tu animación es diferente
-	death_timer.start()  # Iniciamos el temporizador
+	animated_sprite.play("death")  # Reproducimos la animación de muert
 
 # Conectar la señal de tiempo de espera del temporizador
 func _on_death_timer_timeout() -> void:

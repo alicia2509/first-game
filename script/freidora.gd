@@ -18,3 +18,7 @@ func _process(delta: float) -> void:
 		animated_sprite.flip_h = false
 	
 	position.x += direction * SPEED * delta
+	
+func dead():
+	await animated_sprite.play("dead")
+	queue_free()
