@@ -1,21 +1,23 @@
 [gd_scene load_steps=4 format=3 uid="uid://coyxk4khtejix"]
 
-[ext_resource type="Script" path="res://scenes/bala.gd" id="1_ernc1"]
-[ext_resource type="Texture2D" uid="uid://c58gmvgieohyi" path="res://assets/sprites/coin.png" id="1_sgltm"]
+[ext_resource type="Script" path="res://script/bala.gd" id="1_6ptsv"]
+[ext_resource type="Texture2D" uid="uid://c58gmvgieohyi" path="res://assets/sprites/coin.png" id="2_mool0"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6myal"]
-radius = 14.1421
+[sub_resource type="CircleShape2D" id="CircleShape2D_n7g0q"]
 
-[node name="bala" type="RigidBody2D"]
-script = ExtResource("1_ernc1")
+[node name="bala" type="Area2D"]
+collision_layer = 3
+collision_mask = 2
+script = ExtResource("1_6ptsv")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_sgltm")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_n7g0q")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-1, 1)
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("2_mool0")
 region_enabled = true
-region_rect = Rect2(0, 0, 69, 65)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 4)
-shape = SubResource("CircleShape2D_6myal")
+region_rect = Rect2(69, 12.75, 32, 38)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

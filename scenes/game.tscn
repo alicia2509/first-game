@@ -440,7 +440,7 @@ text = "has conseguido
 horizontal_alignment = 1
 
 [node name="bala" parent="Game manager" instance=ExtResource("3_el3jq")]
-position = Vector2(171, -54)
+position = Vector2(185, -56)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_bcwkl")

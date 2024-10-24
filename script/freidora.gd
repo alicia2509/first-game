@@ -19,6 +19,8 @@ func _process(delta: float) -> void:
 	
 	position.x += direction * SPEED * delta
 	
+	
+	
 func dead():
-	await animated_sprite.play("dead")
+	#await animated_sprite.play("dead")
 	queue_free()
