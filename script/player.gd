@@ -5,6 +5,7 @@ const JUMP_VELOCITY = -300.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var death_timer: Timer = $death_timer  # Asegúrate de que el nombre sea correcto
+@onready var marker_2d: Marker2D = $Marker2D
 
 var is_dead = false  # Variable para saber si el jugador está muerto
 
@@ -44,6 +45,10 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	if Input.is_action_just_pressed("shoot"):
+		print("shoot")
+		shoot()
+	
 
 	move_and_slide()
 
@@ -55,3 +60,11 @@ func die():
 # Conectar la señal de tiempo de espera del temporizador
 func _on_death_timer_timeout() -> void:
 	get_tree().reload_current_scene()  # Reinicia la escena cuando el temporizador se acaba
+
+func shoot():
+	const BALA_TEMP=preload("res://scenes/bala.tscn")
+	var new_bala=BALA_TEMP.instantiate()
+	new_bala.position=marker_2d.position
+	print(new_bala.position)
+	print(marker_2d.position)
+	

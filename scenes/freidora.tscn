@@ -85,7 +85,7 @@ scale = Vector2(0.572727, 0.572727)
 sprite_frames = SubResource("SpriteFrames_hmspj")
 autoplay = "default"
 
-[node name="killzone" parent="." instance=ExtResource("2_eklko")]
+[node name="killzone" parent="." groups=["enemigo"] instance=ExtResource("2_eklko")]
 collision_layer = 2
 collision_mask = 6
 

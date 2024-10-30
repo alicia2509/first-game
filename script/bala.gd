@@ -1,17 +1,10 @@
 extends Area2D
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta'"disable_mode" is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 
 
-func _on_body_entered(body):
-	print("aaaa")
-	
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("enemigo"):
+		area.get_parent().queue_free()
+		queue_free()

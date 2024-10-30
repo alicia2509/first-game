@@ -10,10 +10,14 @@ func _on_body_entered(body):
 		# Llamamos a la función de muerte del jugador
 		body.die()
 		timer.start()
+	if body.is_in_group("bala"): 
+		print("choca")
 
 func _on_timer_timeout() -> void:
 	Engine.time_scale = 1.0
 	get_tree().reload_current_scene()
+	
+	
 
 	
 	

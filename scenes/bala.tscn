@@ -3,21 +3,22 @@
 [ext_resource type="Script" path="res://script/bala.gd" id="1_6ptsv"]
 [ext_resource type="Texture2D" uid="uid://c58gmvgieohyi" path="res://assets/sprites/coin.png" id="2_mool0"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_n7g0q"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_am058"]
+radius = 2.23607
 
 [node name="bala" type="Area2D"]
-collision_layer = 3
+collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_6ptsv")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_n7g0q")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_am058")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(-1, 1)
-scale = Vector2(0.4375, 0.4375)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 4.76837e-07)
+scale = Vector2(0.120968, 0.120968)
 texture = ExtResource("2_mool0")
 region_enabled = true
-region_rect = Rect2(69, 12.75, 32, 38)
+region_rect = Rect2(367, 9.75, 31.5, 47)
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
