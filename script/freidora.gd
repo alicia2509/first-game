@@ -19,8 +19,13 @@ func _process(delta: float) -> void:
 	
 	position.x += direction * SPEED * delta
 	
-	
+
 	
 func dead():
 	#await animated_sprite.play("dead")
 	queue_free()
+
+
+func _on_killzone_body_entered(body: Node2D) -> void:
+	if body.is_in_group("bala"): 
+		dead()

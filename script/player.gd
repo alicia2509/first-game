@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
+@onready var marker_izq: Marker2D = $Marker_izq
+@onready var marker_drch: Marker2D = $Marker_drch
+
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var death_timer: Timer = $death_timer  # Asegúrate de que el nombre sea correcto
@@ -64,7 +67,11 @@ func _on_death_timer_timeout() -> void:
 func shoot():
 	const BALA_TEMP=preload("res://scenes/bala.tscn")
 	var new_bala=BALA_TEMP.instantiate()
-	new_bala.position=marker_2d.position
-	print(new_bala.position)
-	print(marker_2d.position)
-	
+	if animated_sprite.flip_h:
+		new_bala.global_position=marker_izq.global_position
+		new_bala.initial_velocity=Vector2(-150,-100)
+	else:
+		new_bala.global_position=marker_drch.global_position
+	get_tree().current_scene.add_child(new_bala)
+#	new_bala.position=marker_2d.position
+	#marker_2d.add_child(new_bala)
